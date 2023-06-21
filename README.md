@@ -1,5 +1,5 @@
-# F2SRGAN
-This is an official implementation of paper "F2SRGAN: A Lightweight Approach Boosting Perceptual Quality in Single Image Super-Resolution via A Revised Fast Fourier Convolution".
+# Light-F2SRGAN
+This is an official implementation of paper "Investigation into Perceptual-Aware Optimization for Single-Image Super-Resolution in Embedded Systems".
 
 # Data prepare
 You should organize the images layout like this:
@@ -28,7 +28,7 @@ There are 5 mode of training:
 To replicate the paper's result, first train model with `pre` mode, followed by `full` mode.
 
 # Test
-Pretrained weight for `x2` and `x4` upscale factor are provided in `pretrain_weight`. Code for load model:
+Pretrained weight for `x2` and `x4` upscale factor are provided in `pretrain_weight`. Code for load model F2SRGAN:
 ```python
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 SCALE_FACTOR = 4 #Setup scale factor
@@ -39,20 +39,22 @@ model.eval()
 ```
 
 # Evaluate
-- First run `inference.py` to produce output images.
+- If you want to generate images for Light-F2SRGAN for each optimization method, run `generate_image.py` to produce output images.
+- If you want to measure times running some optimization method, run `inference_time.py` to test.
 - To measure the Perceptual Index, please refer to this [Repository](https://github.com/roimehrez/PIRM2018) for more information
 
 # Citation
 ```
-@ARTICLE{10077589,
-  author={Nguyen, Duc Phuc and Vu, Khanh Hung and Nguyen, Duc Dung and Pham, Hoang-Anh},
-  journal={IEEE Access}, 
-  title={F2SRGAN: A Lightweight Approach Boosting Perceptual Quality in Single Image Super-Resolution via a Revised Fast Fourier Convolution}, 
+@article{vu2023investigation,
+  title={Investigation into Perceptual-Aware Optimization for Single-Image Super-Resolution in Embedded Systems},
+  author={Vu, Khanh Hung and Nguyen, Duc Phuc and Nguyen, Duc Dung and Pham, Hoang-Anh},
+  journal={Electronics},
+  volume={12},
+  number={11},
+  pages={2544},
   year={2023},
-  volume={11},
-  number={},
-  pages={29062-29073},
-  doi={10.1109/ACCESS.2023.3260159}}
+  publisher={MDPI}
+}
 ```
 
 # References
