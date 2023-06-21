@@ -58,5 +58,6 @@ model.eval()
 ```
 
 # References
+- [F2SRGAN](https://github.com/bibom108/F2SRGAN)
 - [SwiftSRGAN](https://github.com/Koushik0901/Swift-SRGAN)
 - [LaMa](https://github.com/advimman/lama)
