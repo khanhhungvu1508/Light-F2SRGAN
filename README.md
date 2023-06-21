@@ -27,21 +27,28 @@ There are 5 mode of training:
 
 To replicate the paper's result, first train model with `pre` mode, followed by `full` mode.
 
-# Test
-Pretrained weight for `x2` and `x4` upscale factor are provided in `pretrain_weight`. Code for load model F2SRGAN:
-```python
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-SCALE_FACTOR = 4 #Setup scale factor
-MODEL_PATH = f"./pretrain_weight/F2SRGAN_{SCALE_FACTOR}x.pt"
-netG = Generator(upscale_factor = SCALE_FACTOR)
-netG.load_state_dict(torch.load(MODEL_PATH, map_location=DEVICE)['model'])
-model.eval()
+# Pretrain weight structure
+```shell
+SR_testing_dataset
+├── F2SRGAN_x2.pt           # Pretrain for model F2SRGAN with scale x2
+├── F2SRGAN_x4.pt           # Pretrain for model F2SRGAN with scale x4
+├── F2SRGAN_x4_QAT.pth.tar  # Pretrain for model F2SRGAN QAT with scale x4
+├── F2SRGAN_x4_student.pt   # Pretrain for model F2SRGAN KD with AT method with scale x4
+└── LightF2SRGAN_x4.pt      # Pretrain for model light-F2SRGAN with scale x4
 ```
 
 # Evaluate
 - If you want to generate images for Light-F2SRGAN for each optimization method, run `generate_image.py` to produce output images.
 - If you want to measure times running some optimization method, run `inference_time.py` to test.
 - To measure the Perceptual Index, please refer to this [Repository](https://github.com/roimehrez/PIRM2018) for more information
+
+# Results
+**PI results of optimization method**
+![PI results of optimization method](https://github.com/khanhhungvu1508/Light-F2SRGAN/assets/69689114/a1a993d3-05f6-4f3b-8f55-7953bc10ea47)
+
+**Time inference in Desktop and Jetson Xavier NX**
+![Time inference in Desktop and Jetson Xavier NX](https://github.com/khanhhungvu1508/Light-F2SRGAN/assets/69689114/5756f1a0-a528-4a5c-95c5-67f3be19fc70)
+
 
 # Citation
 ```
