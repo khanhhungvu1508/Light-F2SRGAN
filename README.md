@@ -44,9 +44,11 @@ SR_testing_dataset
 
 # Results
 **PI results of optimization method**
+
 ![PI results of optimization method](https://github.com/khanhhungvu1508/Light-F2SRGAN/assets/69689114/a1a993d3-05f6-4f3b-8f55-7953bc10ea47)
 
 **Time inference in Desktop and Jetson Xavier NX**
+
 ![Time inference in Desktop and Jetson Xavier NX](https://github.com/khanhhungvu1508/Light-F2SRGAN/assets/69689114/5756f1a0-a528-4a5c-95c5-67f3be19fc70)
 
 
