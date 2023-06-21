@@ -82,7 +82,7 @@ def swiftsrgan_psnr_testing(_path, model_path, ds):
     return valing_results["psnr"]/nums
 
 dataset = ["BSDS100"]
-model_path = f"./pretrain_weight/F2SRGAN_{UPSCALE_FACTOR}x.pt"
+model_path = f"../pretrain_weight/F2SRGAN_{UPSCALE_FACTOR}x.pt"
 
 for ds in dataset:
     psnr = swiftsrgan_psnr_testing("./SR_testing_datasets/" + ds, model_path, ds)
