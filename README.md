@@ -29,7 +29,7 @@ To replicate the paper's result, first train model with `pre` mode, followed by 
 
 # Pretrain weight structure
 ```shell
-SR_testing_dataset
+pretrain_weight
 ├── F2SRGAN_x2.pt           # Pretrain for model F2SRGAN with scale x2
 ├── F2SRGAN_x4.pt           # Pretrain for model F2SRGAN with scale x4
 ├── F2SRGAN_x4_QAT.pth.tar  # Pretrain for model F2SRGAN QAT with scale x4
